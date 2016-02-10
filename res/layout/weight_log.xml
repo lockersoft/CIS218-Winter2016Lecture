@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back to BMI"
+            android:id="@+id/btnBackToBMI"
+            android:layout_marginBottom="41dp" android:onClick="switchToBMI" android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Date"
+            android:id="@+id/lblDate"
+            android:layout_marginTop="59dp"
+            android:layout_marginStart="23dp" android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge" android:text="Time" android:id="@+id/lblTime"
+              android:layout_marginTop="27dp"
+              android:layout_below="@+id/lblDate" android:layout_alignStart="@+id/lblDate"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+              android:textAppearance="?android:attr/textAppearanceLarge" android:text="Weight" android:id="@+id/lblWeight"
+              android:layout_marginTop="33dp"
+              android:layout_below="@+id/lblTime" android:layout_toStartOf="@+id/edtTime"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/edtDate" android:layout_above="@+id/lblTime" android:layout_centerHorizontal="true"
+            android:onClick="dateOnClick" android:editable="true"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:ems="10"
+            android:id="@+id/edtTime" android:layout_above="@+id/lblWeight" android:layout_centerHorizontal="true"
+            android:onClick="timeOnClick"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:ems="10"
+            android:id="@+id/edtWeight"
+            android:layout_alignBottom="@+id/lblWeight" android:layout_centerHorizontal="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Weight"
+            android:id="@+id/btnSaveWeight"
+            android:onClick="saveData" android:layout_below="@+id/lblBMIOutput"
+            android:layout_alignRight="@+id/btnBackToBMI" android:layout_marginTop="36dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="BMI"
+            android:id="@+id/lblBMI"
+            android:layout_centerVertical="true" android:layout_alignStart="@+id/lblWeight"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="BMI"
+            android:id="@+id/lblBMIOutput"
+            android:layout_alignTop="@+id/lblBMI"
+            android:layout_alignEnd="@+id/edtWeight" android:layout_alignStart="@+id/edtWeight"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Show Chart"
+            android:id="@+id/button" android:layout_above="@+id/btnBackToBMI" android:layout_centerHorizontal="true"
+            android:onClick="switchToChart"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/editText" android:layout_below="@+id/lblBMIOutput"
+            android:layout_alignLeft="@+id/btnSaveWeight" android:layout_alignParentRight="true"/>
+</RelativeLayout>

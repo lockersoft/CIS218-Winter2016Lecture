@@ -65,10 +65,10 @@ public class MyActivity extends BaseActivity {
 
   public void switchToLogger(View v) {
     Intent extras = new Intent(this, WeightLogActivity.class);
+    extras.setFlags( extras.FLAG_ACTIVITY_CLEAR_TASK );
     extras.putExtra("Weight", edtTextWeight.getText().toString());
     extras.putExtra("BMI", bmi);
     startActivity(extras);
-//    startActivity(new Intent(this, WeightLogActivity.class));
   }
 
   public void radioButtonClicked(View v) {
@@ -95,7 +95,7 @@ public class MyActivity extends BaseActivity {
         weight += 20;
       }
 
-      Log.i("BMI", "Inside CalculateBMI: weight " + weight.toString());
+      Log.i("BMI", getString( R.string.logInsideCalculateBMI) + weight.toString());
       // (weight / (height * height)) * 703.0
       bmi = (weight / (height * height)) * 703.0;
       txtBMIValue.setText(String.format("%.2f", bmi));
@@ -103,12 +103,12 @@ public class MyActivity extends BaseActivity {
       txtStatus.setText(getStatus(bmi));
       txtStatus.setVisibility(View.VISIBLE);
     } catch (Exception ex) {
-      toastIt("You are an idiot");
+      toastIt(getString( R.string.youAreAnIdiot));
     }
   }
 
   private String getStatus(Double bmi) {
-    String status = "In the World you are: ";
+    String status = getString( R.string.Intheworldyouare);
     if (rdoAmerican.isChecked()) {
       status = "In American you are: " + status;
     }
@@ -121,7 +121,7 @@ public class MyActivity extends BaseActivity {
     } else if (bmi >= 16.0 && bmi < 18.0) {
       status = getString(R.string.underweight);  //getString( R.string.underweight );
     } else if (bmi >= 18.0 && bmi < 24.0) {
-      status = "normal_weight"; //getString( R.string. );
+      status = getString( R.string.normalWeight); //getString( R.string. );
     } else if (bmi >= 24.0 && bmi < 29.0) {
       status = "overweight";// getString( R.string. );
     } else if (bmi >= 29.0 && bmi < 35.0) {

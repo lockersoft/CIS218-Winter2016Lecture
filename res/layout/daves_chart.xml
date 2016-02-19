@@ -5,7 +5,18 @@
 
     <com.github.mikephil.charting.charts.BarChart
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" android:id="@+id/view"
+            android:layout_height="300dp"
+            android:id="@+id/chartViewID"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
-            android:layout_alignParentLeft="true" android:layout_alignParentTop="true"/>
+            android:layout_below="@+id/editText2"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="date"
+            android:ems="10"
+            android:id="@+id/editText2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"/>
 </RelativeLayout>

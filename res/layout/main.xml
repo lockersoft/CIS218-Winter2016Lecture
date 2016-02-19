@@ -7,7 +7,7 @@
     <TextView
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Hello Dave"
+            android:text="@string/helloWorld"
             android:id="@+id/txtHello"/>
     <TextView
             android:layout_width="wrap_content"
@@ -45,7 +45,7 @@
     <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Calculate BMI"
+            android:text="@string/calculateBMI"
             android:id="@+id/btnCalculateBMI"
             android:nestedScrollingEnabled="true"
             android:onClick="CalulateBMI" android:layout_gravity="center_horizontal"/>

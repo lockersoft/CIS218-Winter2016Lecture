@@ -8,6 +8,9 @@ import android.widget.Toast;
  */
 public class BaseActivity extends Activity {
 
+  String delimiter = "^";
+
+  String weightLogFilename = "weightLog.txt";
   public void toastIt( String msg ){
     Toast.makeText( getApplicationContext(),
         msg, Toast.LENGTH_SHORT).show();

@@ -94,14 +94,15 @@ public class WeightLogActivity extends BaseActivity{
   }
 
   public void saveData( View v ){
-    String dataPoint = edtDate.getText().toString() +
-            "," + edtTime.getText().toString() +
-            "," + edtWeight.getText().toString() +
-            "," + lblBMIOutput.getText().toString() + "\n";
+    String dataPoint =
+                  edtDate.getText().toString() +
+                      delimiter + edtTime.getText().toString() +
+                      delimiter + edtWeight.getText().toString() +
+                      delimiter + lblBMIOutput.getText().toString() + "\n";
     Log.i( "BMI", dataPoint );
 
     try{
-      FileOutputStream out = openFileOutput( "weightLog.txt", Context.MODE_APPEND );
+      FileOutputStream out = openFileOutput( weightLogFilename, Context.MODE_APPEND );
       out.write( dataPoint.getBytes() );
       out.close();
       toastIt( "Entry Saved" );

@@ -3,4 +3,10 @@
     <string name="app_name">LectureW16</string>
     <string name="seriously_underweight">seriously underweight</string>
     <string name="underweight">underweight</string>
+    <string name="logInsideCalculateBMI">"Inside CalculateBMI: weight "</string>
+    <string name="youAreAnIdiot">You are an idiot</string>
+    <string name="Intheworldyouare">"In the World you are: "</string>
+    <string name="helloWorld">Hello Dave</string>
+    <string name="normalWeight">normal_weight</string>
+    <string name="calculateBMI">Calculate BMI</string>
 </resources>

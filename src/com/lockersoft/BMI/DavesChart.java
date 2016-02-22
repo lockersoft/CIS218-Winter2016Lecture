@@ -1,5 +1,7 @@
 package com.lockersoft.BMI;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
@@ -8,6 +10,8 @@ import android.os.Bundle;
 import android.text.Layout;
 import android.util.Log;
 import android.view.View;
+import android.widget.DatePicker;
+import android.widget.EditText;
 import com.github.mikephil.charting.charts.BarChart;
 import com.github.mikephil.charting.charts.HorizontalBarChart;
 import com.github.mikephil.charting.data.BarData;
@@ -16,24 +20,42 @@ import com.github.mikephil.charting.data.BarEntry;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Locale;
 import java.util.Scanner;
 
 /**
  * Created by Dave.Jones on 2/8/2016.
  */
-public class DavesChart extends BaseActivity {
+public class DavesChart extends BaseActivity{
 
   ArrayList<BarEntry> entries = new ArrayList<>();
   ArrayList<String> labels = new ArrayList<String>();
+  private Calendar c = Calendar.getInstance();
+  EditText edtStartDate;
+  BarChart chart;
+  boolean firstTime = true;
+
+  DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener(){
+    @Override
+    public void onDateSet( DatePicker view, int year, int monthOfYear, int dayOfMonth ){
+      c.set( Calendar.YEAR, year );
+      c.set( Calendar.MONTH, monthOfYear );
+      c.set( Calendar.DAY_OF_MONTH, dayOfMonth );
+      setCurrentDateOnView();
+    }
+  };
 
   @Override
   public void onCreate( Bundle savedInstanceState ){
     super.onCreate( savedInstanceState );
     setContentView( R.layout.daves_chart );
-    BarChart chart = (BarChart) findViewById(R.id.chartViewID);
-
-    readWeightLog();
+    chart = (BarChart) findViewById( R.id.chartViewID );
+    edtStartDate = (EditText) findViewById( R.id.edtStartDate );
+    showChart();
+    firstTime = false;
 //
 //    entries.add( new BarEntry( 4f, 0 ));
 //    entries.add( new BarEntry( (float)6.0, 1 ));
@@ -42,7 +64,7 @@ public class DavesChart extends BaseActivity {
 //    entries.add( new BarEntry( 35.0f, 4 ));
 //    entries.add( new BarEntry( 24.0f, 5 ));
 
-    BarDataSet dataSet = new BarDataSet( entries, "Weight");
+
 
 //    labels.add( "Jan" );
 //    labels.add( "Feb" );
@@ -53,9 +75,30 @@ public class DavesChart extends BaseActivity {
 
 //    setContentView( chart );
 //    addContentView( chart, null );
+  }
+
+  private void showChart(){
+    labels.clear();
+    entries.clear();
+    chart.clear();
+    // Filter the data
+    readWeightLog();
+    BarDataSet dataSet = new BarDataSet( entries, "Weight" );
     BarData data = new BarData( labels, dataSet );
-    chart.setData( data );
-    chart.setDescription( "How Fat I Am" );
+    chart.setData(data);
+    chart.setDescription("How Fat I Am");
+  }
+
+  public void chartDateOnClick( View v ){
+    new DatePickerDialog( this, date,
+        c.get( Calendar.YEAR ), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();
+  }
+
+  private void setCurrentDateOnView() {
+    // String dateFormat = "MM/dd/yyyy";
+    SimpleDateFormat sdf = new SimpleDateFormat( "MM/dd/yyyy", Locale.US );
+    edtStartDate.setText( sdf.format( c.getTime()) );
+    showChart();
   }
 
 private void readWeightLog(){
@@ -88,6 +131,12 @@ private void readWeightLog(){
       // xAxis
       labels.add( a[0] );
     }
+
+    if( !firstTime ){
+      entries.add( new BarEntry( 42.0f, count ) );
+      labels.add( "fake" );
+    }
+
     s.close();
   } catch( Exception e ){
     Log.e( "CHART", e.getMessage());

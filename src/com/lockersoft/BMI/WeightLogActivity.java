@@ -23,8 +23,8 @@ public class WeightLogActivity extends BaseActivity{
    * Called when the activity is first created.
    */
   Button btnBackToBMI;
-  String weight;
-  Double bmi;
+  public static String weight;
+  public static Double bmi;
   TextView edtDate;
   TextView edtTime;
   TextView lblBMIOutput;
@@ -116,13 +116,4 @@ public class WeightLogActivity extends BaseActivity{
     super.onResume();
     getIntentData();
   }
-  public void switchToChart( View v )
-  {
-    startActivity( new Intent( this, DavesChart.class ) );
-  }
-
-
-  public void switchToBMI( View v ){
-    startActivity( new Intent( this, MyActivity.class ) );
-  }
-}
+ }

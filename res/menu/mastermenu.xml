@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/switchToBMI"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:icon="@drawable/ic_calculator"
+        android:title="BMI Calculator"/>
+    <item
+            android:id="@+id/switchToLog"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:icon="@drawable/ic_log"
+            android:title="Weight Log"/>
+    <item
+            android:id="@+id/switchToChart"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:icon="@drawable/ic_chart"
+            android:title="Chart"/>
+    <item
+            android:id="@+id/switchToAlarm"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:icon="@drawable/ic_alarm"
+            android:title="Medicine Alarm"/>
+
+</menu>

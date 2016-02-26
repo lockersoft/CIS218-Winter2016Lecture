@@ -18,13 +18,13 @@ public class MyActivity extends BaseActivity {
   Button calculateBMI;
   TextView txtBMIValue;
   EditText edtTextHeight;
-  EditText edtTextWeight;
+  public static EditText edtTextWeight;
   TextView txtStatus;
   RadioButton rdoAmerican;
   RadioButton rdoWorld;
   RadioGroup weightLocationGroup;
   private boolean american = true;
-  Double bmi = 0.0;
+  public static Double bmi = 0.0;
 
   @Override
   public void onCreate(Bundle savedInstanceState) {
@@ -63,13 +63,7 @@ public class MyActivity extends BaseActivity {
     }
   }
 
-  public void switchToLogger(View v) {
-    Intent extras = new Intent(this, WeightLogActivity.class);
-    extras.setFlags( extras.FLAG_ACTIVITY_CLEAR_TASK );
-    extras.putExtra("Weight", edtTextWeight.getText().toString());
-    extras.putExtra("BMI", bmi);
-    startActivity(extras);
-  }
+
 
   public void radioButtonClicked(View v) {
     Log.i("BMI", "Radio Button Clicked");

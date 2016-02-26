@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">LectureW16</string>
+    <string name="app_name">Daves BMI</string>
     <string name="seriously_underweight">seriously underweight</string>
     <string name="underweight">underweight</string>
     <string name="logInsideCalculateBMI">"Inside CalculateBMI: weight "</string>

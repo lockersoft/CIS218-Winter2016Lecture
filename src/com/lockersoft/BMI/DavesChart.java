@@ -55,7 +55,7 @@ public class DavesChart extends BaseActivity{
     chart = (BarChart) findViewById( R.id.chartViewID );
     edtStartDate = (EditText) findViewById( R.id.edtStartDate );
     showChart();
-    firstTime = false;
+  //  firstTime = false;
 //
 //    entries.add( new BarEntry( 4f, 0 ));
 //    entries.add( new BarEntry( (float)6.0, 1 ));
@@ -82,11 +82,14 @@ public class DavesChart extends BaseActivity{
     entries.clear();
     chart.clear();
     // Filter the data
-    readWeightLog();
+//    readWeightLog();
     BarDataSet dataSet = new BarDataSet( entries, "Weight" );
     BarData data = new BarData( labels, dataSet );
     chart.setData(data);
     chart.setDescription("How Fat I Am");
+  //  chart.invalidate();
+  //  chart = (BarChart) findViewById( R.id.chartViewID );
+    chart.invalidate();
   }
 
   public void chartDateOnClick( View v ){
@@ -132,10 +135,10 @@ private void readWeightLog(){
       labels.add( a[0] );
     }
 
-    if( !firstTime ){
-      entries.add( new BarEntry( 42.0f, count ) );
-      labels.add( "fake" );
-    }
+//    if( !firstTime ){
+//      entries.add( new BarEntry( 42.0f, count ) );
+//      labels.add( "fake" );
+//    }
 
     s.close();
   } catch( Exception e ){

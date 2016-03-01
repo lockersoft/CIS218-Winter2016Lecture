@@ -38,19 +38,15 @@
                     android:text="Active"
                     android:id="@+id/switchEnabled" android:layout_gravity="center_horizontal"
                     android:checked="true" android:layout_above="@+id/editTextNotes"
-                    android:layout_alignParentEnd="true"/>
+                    android:layout_alignParentEnd="true" android:onClick="activeOnClick"/>
             <Switch
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Recurring"
                     android:id="@+id/switchRecurring"
-                    android:checked="false" android:layout_alignParentBottom="true"
-                    android:layout_alignStart="@+id/switchEnabled"/>
-            <ExpandableListView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/expandableListView" android:layout_alignParentBottom="true"
-                    android:layout_alignParentEnd="true"/>
+                    android:checked="false"
+                    android:layout_alignParentBottom="true" android:layout_alignEnd="@+id/switchEnabled"
+                    android:nestedScrollingEnabled="false" android:onClick="recurringOnClick"/>
         </RelativeLayout>
     </ScrollView>
 </LinearLayout>

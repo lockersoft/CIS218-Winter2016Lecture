@@ -86,7 +86,7 @@ public class DavesChart extends BaseActivity{
     BarDataSet dataSet = new BarDataSet( entries, "Weight" );
     BarData data = new BarData( labels, dataSet );
     chart.setData(data);
-    chart.setDescription("How Fat I Am");
+    chart.setDescription(getString( R.string.fatIam));
   //  chart.invalidate();
   //  chart = (BarChart) findViewById( R.id.chartViewID );
     chart.invalidate();

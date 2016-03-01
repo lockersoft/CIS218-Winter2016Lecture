@@ -10,7 +10,9 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Switch;
 
 import java.util.Calendar;
@@ -25,6 +27,8 @@ public class AlarmActivity extends BaseActivity{
   private BroadcastReceiver br;
   private Switch switchRecurring;
   private Switch switchActive;
+  private Alarm[] alarms = new Alarm[10];
+  private EditText notesText, dateText;
 
   @Override
   public void onCreate( Bundle savedInstanceState ){
@@ -32,6 +36,8 @@ public class AlarmActivity extends BaseActivity{
     setContentView( R.layout.alarmlayout );
     switchRecurring = (Switch) findViewById(R.id.switchRecurring );
     switchActive = (Switch) findViewById(R.id.switchEnabled );
+    notesText = (EditText)findViewById( R.id.editTextNotes );
+    dateText = (EditText)findViewById( R.id.editTextDate );
 
     br = new BroadcastReceiver(){
       @Override
@@ -41,19 +47,24 @@ public class AlarmActivity extends BaseActivity{
       }
     };
     registerReceiver( br, new IntentFilter( getPackageName() ));//"com.lockersoft.BMI") );
-
     am = (AlarmManager)this.getSystemService( Context.ALARM_SERVICE );
-    Intent alarmIntent = new Intent( getPackageName() );// "com.lockersoft.BMI" );
-    PendingIntent pi = PendingIntent.getBroadcast( this, 0, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT );
-    c.add(Calendar.SECOND, 5);
-    am.set( AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pi );
+    alarms[0] = new Alarm( notesText, dateText, switchRecurring, switchActive, 0, this, Calendar.getInstance());
+//    alarms[1] = new Alarm( notesText, dateText, switchRecurring, switchActive, 1, this, Calendar.getInstance());
+//    alarms[2] = new Alarm( notesText, dateText, switchRecurring, switchActive, 2, this, Calendar.getInstance());
+//    alarms[3] = new Alarm( notesText, dateText, switchRecurring, switchActive, 3, this, Calendar.getInstance());
   }
 
   public void activeOnClick( View v ){
-    if( switchActive.isChecked() )
+    Alarm a = (Alarm)v.getTag();
+    Log.i( "BMI", v.getTag().toString());
+    if( a.active.isChecked() ){   // switchActive_0, switchActive_1
       toastIt( "Alarm is Active" );
-    else
+      alarms[a.alarmID].cal.add( Calendar.SECOND, 5);
+      am.set( AlarmManager.RTC_WAKEUP, alarms[a.alarmID].cal.getTimeInMillis(), alarms[a.alarmID].pi );
+    }
+    else{
       toastIt( "Alarm is Off" );
+    }
   }
 
   public void createNotification( ){

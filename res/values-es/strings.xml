@@ -9,4 +9,5 @@
     <string name="helloWorld">Hola Dave</string>
     <string name="normalWeight">peso normal</string>
     <string name="calculateBMI">Calcular BMI</string>
+    <string name="fatIam">Como de gordo estoy</string>
 </resources>

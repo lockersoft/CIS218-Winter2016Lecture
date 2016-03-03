@@ -23,9 +23,8 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" readonly="true" id="b609f566-090e-49bb-8ac7-abde5cef1c9d" name="Default" comment="">
+    <list default="true" readonly="true" id="b609f566-090e-49bb-8ac7-abde5cef1c9d" name="Default" comment="playing with expandable list view">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/alarmlayout.xml" afterPath="$PROJECT_DIR$/res/layout/alarmlayout.xml" />
     </list>
     <ignored path="BMI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -205,7 +204,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="21" />
     <option name="width" value="1899" />
-    <option name="height" value="1024" />
+    <option name="height" value="1001" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -851,7 +850,7 @@
       <workItem from="1456793176992" duration="10203000" />
       <workItem from="1456853634980" duration="1580000" />
       <workItem from="1456855428678" duration="3895000" />
-      <workItem from="1457021640850" duration="2007000" />
+      <workItem from="1457021640850" duration="2210000" />
     </task>
     <task id="LOCAL-00001" summary="added date picker to chart">
       <created>1456165838157</created>
@@ -883,14 +882,20 @@
       <option name="project" value="LOCAL" />
       <updated>1456859055843</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="playing with expandable list view">
+      <created>1457023866535</created>
+      <option name="number" value="00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1457023866535</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79128000" />
+    <option name="totallyTimeSpent" value="79331000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="21" y="0" width="1899" height="1024" extended-state="0" />
+    <frame x="21" y="0" width="1899" height="1001" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -900,9 +905,9 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="true" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.63378686" sideWeight="0.504315" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41154328" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4108527" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32600734" sideWeight="0.46979505" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.0" sideWeight="0.495685" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2635659" sideWeight="0.495685" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32955772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.020075282" sideWeight="0.693096" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -967,7 +972,8 @@
     <MESSAGE value="added menu bar (actionbar) to project - started alarm" />
     <MESSAGE value="added alarm and pending intent to trigger 5 seconds in the future." />
     <MESSAGE value="added alarm class and array of alarms" />
-    <option name="LAST_COMMIT_MESSAGE" value="added alarm class and array of alarms" />
+    <MESSAGE value="playing with expandable list view" />
+    <option name="LAST_COMMIT_MESSAGE" value="playing with expandable list view" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

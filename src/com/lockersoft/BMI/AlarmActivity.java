@@ -43,6 +43,15 @@ public class AlarmActivity extends BaseActivity{
       @Override
       public void onReceive( Context context, Intent intent ){
         toastIt( "Wake UP:" );
+
+        Bundle extras = intent.getExtras();
+        if (extras != null) {
+          int alarmID = extras.getInt( "alarm" );
+          if( alarms[alarmID].recurring.isChecked()){
+            alarms[ alarmID ].cal.add( Calendar.HOUR, 24 );
+            am.set( AlarmManager.RTC_WAKEUP, alarms[ alarmID ].cal.getTimeInMillis(), alarms[ alarmID ].pi );
+          }
+        }
         createNotification();
       }
     };

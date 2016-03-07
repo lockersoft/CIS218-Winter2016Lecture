@@ -31,7 +31,8 @@ public class Alarm {
     this.cal = cal;
 
     this.alarmIntent = new Intent( "com.lockersoft.BMI" );
-    this.pi = PendingIntent.getBroadcast( context, alarmID, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT );
+    this.alarmIntent.putExtra( "alarm", this.alarmID );
+    this.pi = PendingIntent.getBroadcast( context, this.alarmID, alarmIntent, PendingIntent.FLAG_CANCEL_CURRENT );
     setTags();
   }
 

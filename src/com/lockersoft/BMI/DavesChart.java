@@ -82,7 +82,7 @@ public class DavesChart extends BaseActivity{
     entries.clear();
     chart.clear();
     // Filter the data
-//    readWeightLog();
+    readWeightLog();
     BarDataSet dataSet = new BarDataSet( entries, "Weight" );
     BarData data = new BarData( labels, dataSet );
     chart.setData(data);

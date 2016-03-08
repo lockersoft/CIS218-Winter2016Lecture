@@ -8,6 +8,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -61,6 +62,12 @@ public class AlarmActivity extends BaseActivity{
 //    alarms[1] = new Alarm( notesText, dateText, switchRecurring, switchActive, 1, this, Calendar.getInstance());
 //    alarms[2] = new Alarm( notesText, dateText, switchRecurring, switchActive, 2, this, Calendar.getInstance());
 //    alarms[3] = new Alarm( notesText, dateText, switchRecurring, switchActive, 3, this, Calendar.getInstance());
+
+// For reading in a loop
+//    Resources res = getResources();
+//    EditText tempNotes = (EditText) findViewById( res.getIdentifier ("notesText" + 1, "id", getPackageName()));
+//    tempNotes.setText( a[0])
+//    alarms[count] = new Alarm( ..., tempNotes, ...)
   }
 
   public void activeOnClick( View v ){
@@ -68,7 +75,7 @@ public class AlarmActivity extends BaseActivity{
     Log.i( "BMI", v.getTag().toString());
     if( a.active.isChecked() ){   // switchActive_0, switchActive_1
       toastIt( "Alarm is Active" );
-      alarms[a.alarmID].cal.add( Calendar.SECOND, 5);
+      alarms[a.alarmID].cal.add( Calendar.SECOND, 5);  // Replace with the alarm date!
       am.set( AlarmManager.RTC_WAKEUP, alarms[a.alarmID].cal.getTimeInMillis(), alarms[a.alarmID].pi );
     }
     else{
@@ -90,5 +97,4 @@ public class AlarmActivity extends BaseActivity{
         (NotificationManager)getSystemService( NOTIFICATION_SERVICE );
     notificationManager.notify( 0,n );
   }
-
 }

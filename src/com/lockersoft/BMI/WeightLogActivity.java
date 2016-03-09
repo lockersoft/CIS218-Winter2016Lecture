@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.*;
 import org.w3c.dom.Text;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -101,6 +102,10 @@ public class WeightLogActivity extends BaseActivity{
                       delimiter + lblBMIOutput.getText().toString() + "\n";
     Log.i( "BMI", dataPoint );
 
+    File file = getApplicationContext().getFileStreamPath(weightLogFilename);
+    if(file != null || file.exists()) {
+      Log.i("BMI", "Filename Exists");
+    }
     try{
       FileOutputStream out = openFileOutput( weightLogFilename, Context.MODE_APPEND );
       out.write( dataPoint.getBytes() );

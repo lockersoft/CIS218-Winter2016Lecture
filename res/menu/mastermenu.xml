@@ -24,5 +24,11 @@
             android:showAsAction="always"
             android:icon="@drawable/ic_alarm"
             android:title="Medicine Alarm"/>
+    <item
+            android:id="@+id/switchToPreferences"
+            android:orderInCategory="100"
+            android:showAsAction="always"
+            android:icon="@drawable/ic_preferences"
+            android:title="Preferences"/>
 
 </menu>

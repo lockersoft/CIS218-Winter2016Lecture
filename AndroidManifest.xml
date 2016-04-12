@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="com.lockersoft.BMI"
-      android:versionCode="1"
-      android:versionName="1.0">
-    <uses-sdk android:minSdkVersion="23" />
+          package="com.lockersoft.BMI"
+          android:versionCode="1"
+          android:versionName="1.0">
+    <uses-sdk android:minSdkVersion="23"/>
     <application android:label="@string/app_name" android:icon="@drawable/ic_launcher">
         <activity android:name="MyActivity"
                   android:label="@string/app_name"
-                  android:launchMode="singleInstance" >
+                  android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity android:name=".WeightLogActivity"
@@ -20,7 +20,10 @@
                   android:launchMode="singleInstance">
         </activity>
         <activity android:name=".DavesChart"
-              android:launchMode="singleInstance">
-    </activity>
+                  android:launchMode="singleInstance">
+        </activity>
+        <activity android:name=".Preferences"
+                  android:launchMode="singleInstance">
+        </activity>
     </application>
 </manifest>

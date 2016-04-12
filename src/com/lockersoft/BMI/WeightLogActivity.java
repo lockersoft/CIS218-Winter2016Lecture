@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.*;
 import org.w3c.dom.Text;
 
+import java.awt.*;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.text.SimpleDateFormat;
@@ -23,7 +24,6 @@ public class WeightLogActivity extends BaseActivity{
   /**
    * Called when the activity is first created.
    */
-  Button btnBackToBMI;
   public static String weight;
   public static Double bmi;
   TextView edtDate;
@@ -66,6 +66,25 @@ public class WeightLogActivity extends BaseActivity{
     setCurrentDateOnView();
   }
 
+  public void emailLogToDr( View v ){
+    // Send the email
+    toastIt( "Email sent to: " + drEmail );
+    String subject = "Dave Jones' Weight Data";
+    String message = "Dr. Heavy, \n\nHere are my weight logs for you to peruse.\n\nDave";
+
+    // Create an intent to use the existing email system on the user's android.
+    final Intent emailIntent = new Intent( Intent.ACTION_SEND );
+
+    emailIntent.setType( "plain/text" );
+    emailIntent.putExtra( Intent.EXTRA_EMAIL, new String[]{drEmail} );
+    emailIntent.putExtra( Intent.EXTRA_CC, new String[]{"dave.jones@scc.spokane.edu"} );
+    emailIntent.putExtra( Intent.EXTRA_BCC, new String[]{"dave.jones@scc.spokane.edu"} );
+    emailIntent.putExtra( Intent.EXTRA_SUBJECT, subject );
+    emailIntent.putExtra( Intent.EXTRA_TEXT, message );
+
+    startActivityForResult( Intent.createChooser( emailIntent, "Send Email.." ), 42 );
+
+  }
   public void dateOnClick( View v ){
     new DatePickerDialog( this, date,
         c.get( Calendar.YEAR ), c.get(Calendar.MONTH), c.get(Calendar.DAY_OF_MONTH)).show();

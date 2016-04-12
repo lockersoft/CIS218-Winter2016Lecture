@@ -54,8 +54,8 @@
             android:layout_height="wrap_content"
             android:text="Save Weight"
             android:id="@+id/btnSaveWeight"
-            android:onClick="saveData" android:layout_below="@+id/lblBMIOutput"
-            android:layout_alignRight="@+id/btnBackToBMI" android:layout_marginTop="36dp"/>
+            android:onClick="saveData"
+            android:layout_alignTop="@+id/btnEmailDr" android:layout_alignStart="@+id/lblBMI"/>
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -82,4 +82,10 @@
             android:layout_height="wrap_content"
             android:id="@+id/editText" android:layout_below="@+id/lblBMIOutput"
             android:layout_alignLeft="@+id/btnSaveWeight" android:layout_alignParentRight="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Email Log to Dr."
+            android:id="@+id/btnEmailDr" android:layout_below="@+id/editText" android:layout_alignEnd="@+id/editText"
+            android:layout_marginEnd="35dp" android:onClick="emailLogToDr"/>
 </RelativeLayout>

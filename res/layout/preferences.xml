@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lockersoft.com"
+            android:id="@+id/btnLockersoft" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true"
+            android:onClick="clickLockersoft"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:ems="10"
+            android:id="@+id/editDrEmail" android:layout_alignParentTop="true" android:layout_alignParentEnd="true"
+            android:hint="Your Dr&apos;s Email Address" android:layout_alignStart="@+id/btnLockersoft"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Dr.s Email"
+            android:id="@+id/txtEmail" android:layout_alignParentTop="true" android:layout_alignParentStart="true"/>
+    <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save Preferences"
+            android:id="@+id/btnSavePrefs" android:layout_above="@+id/btnLockersoft" android:layout_centerHorizontal="true"
+            android:layout_marginBottom="98dp" android:onClick="savePreferencesClick"/>
+</RelativeLayout>

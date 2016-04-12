@@ -15,6 +15,7 @@ public class BaseActivity extends Activity{
 
   String delimiter = "<=>";
   String weightLogFilename = "weightLog.txt";
+  public static String drEmail;
 
   @Override
   public boolean onCreateOptionsMenu( Menu menu ){
@@ -26,6 +27,9 @@ public class BaseActivity extends Activity{
   public boolean onOptionsItemSelected( MenuItem item ){
     Log.i( "BMI", item.getTitle().toString() );
     switch( item.getItemId() ){
+      case R.id.switchToPreferences :
+        switchToPreferences( null );
+        break;
       case R.id.switchToBMI:
         switchToBMI( null );
         break;
@@ -53,6 +57,9 @@ public class BaseActivity extends Activity{
   public void switchToBMI( View v ){
     startActivity( new Intent( this, MyActivity.class ) );
   }
+  public void switchToPreferences( View v ){
+    startActivity( new Intent( this, Preferences.class ) );
+  }
 
   public void switchToLogger(View v) {
     Intent extras = new Intent(this, WeightLogActivity.class);
@@ -66,4 +73,5 @@ public class BaseActivity extends Activity{
     Toast.makeText( getApplicationContext(),
         msg, Toast.LENGTH_SHORT ).show();
   }
+  
 }
